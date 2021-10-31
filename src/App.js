@@ -1,4 +1,5 @@
 import "./App.css";
+import chords from "./chords.json"
 import { useState } from "react";
 import Fretboard from "./Fretboard";
 import Time from "./Time";
@@ -22,7 +23,7 @@ function App() {
       .then((fetchedWords) => {
         setWords(fetchedWords);
       });
-    setChord([0, 3, 3, 2, 1, 0]);
+    setChord(chords[getRandomInt(chords.length)].notes);
     setTime(getRandomInt(3));
     setIsLoaded(true);
   };
