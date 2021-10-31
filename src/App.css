@@ -39,6 +39,29 @@ table td {
   text-align: center;
 }
 
+.Chord {
+  background-color: #b68f40;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.Chord > .vertical-title {
+  color: black;
+  background-color: #b6cca1;
+}
+
+div.chord-info {
+  font-size: 64px;
+  width: 248px;
+  height: 148px;
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 .Words {
   background-color: #545454;
   color: #ffffff;

@@ -1,6 +1,7 @@
 import "./App.css";
-import chords from "./chords.json"
+import chords from "./chords.json";
 import { useState } from "react";
+import Chord from "./Chord";
 import Fretboard from "./Fretboard";
 import Time from "./Time";
 import Words from "./Words";
@@ -12,7 +13,7 @@ function getRandomInt(max) {
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [chord, setChord] = useState([0]);
+  const [chord, setChord] = useState({ name: "A", notes: [0, 0, 2, 2, 2, 0] });
   const [words, setWords] = useState(["random"]);
   const [time, setTime] = useState(0);
 
@@ -23,7 +24,9 @@ function App() {
       .then((fetchedWords) => {
         setWords(fetchedWords);
       });
-    setChord(chords[getRandomInt(chords.length)].notes);
+
+    const randomChord = chords[getRandomInt(chords.length)];
+    setChord(randomChord);
     setTime(getRandomInt(3));
     setIsLoaded(true);
   };
@@ -33,15 +36,12 @@ function App() {
       <header className="App-header">Guitarando</header>
       <body>
         <div>
-          <Fretboard chord={chord} />
+          <Fretboard notes={chord.notes} />
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <div>
-            <Words words={words} />
-          </div>
-          <div>
-            <Time time={time} />
-          </div>
+          <Chord name={chord.name} />
+          <Words words={words} />
+          <Time time={time} />
         </div>
         <div style={{ textAlign: "center" }}>
           <button className="randomize" onClick={clickRandomize}>

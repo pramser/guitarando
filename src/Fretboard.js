@@ -22,7 +22,7 @@ function resolveFret(chord, string, fret) {
 }
 
 function Fretboard(props) {
-  const CHORD = props.chord;
+  const CHORD_NOTES = props.notes;
 
   return (
     <div>
@@ -37,7 +37,7 @@ function Fretboard(props) {
           <tr>
             {Array.from(Array(NUM_OF_FRETS + 1)).map((z, fret) => (
               <td>
-                {resolveFret(CHORD, string, fret)}
+                {resolveFret(CHORD_NOTES, string, fret)}
               </td>
             ))}
           </tr>
