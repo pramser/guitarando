@@ -1,6 +1,8 @@
 import "./App.css";
-import Fretboard from "./Fretboard";
 import { useState } from "react";
+import Fretboard from "./Fretboard";
+import Time from "./Time";
+import Words from "./Words";
 
 function App() {
   const [error, setError] = useState(null);
@@ -19,26 +21,23 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Randomizer</header>
+      <header className="App-header">Guitarando</header>
       <body>
         <div>
           <Fretboard />
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div>
-            <ol>
-              {words.map((word) => (
-                <li>{word}</li>
-              ))}
-            </ol>
+            <Words words={words} />
           </div>
           <div>
-            Timing
-            4/4
-            </div>
+            <Time />
+          </div>
         </div>
-        <div style={{textAlign: "center"}}>
-          <button className="randomize" onClick={clickRandomize}>Randomize</button>
+        <div style={{ textAlign: "center" }}>
+          <button className="randomize" onClick={clickRandomize}>
+            Randomize
+          </button>
         </div>
       </body>
     </div>

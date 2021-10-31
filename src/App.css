@@ -1,28 +1,94 @@
+.Palette {
+  color: #2176ae;
+  color: #57b8ff;
+  color: #b66d0d;
+  color: #fbb13c;
+  color: #fe6847;
+}
+
 .App-header {
-  background-color: #282c34;
+  font-family: "New Rocker", sans-serif;
+  background-color: #30011e;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(24px + 2vmin);
   color: white;
 }
 
 body {
+  /* Normal CSS */
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+
+  /* Flex properties */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Fretboard th {
-  background-color: #ccc;
+  background-color: #d7fcd4;
 }
 
 table td {
   width: 24px;
 }
 
+.Words {
+  background-color: #545454;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.Words > .vertical-title {
+  color: black;
+  background-color: #b6cca1;
+}
+
+div.word-info {
+  font-size: 32px;
+  width: 248px;
+  height: 148px;
+}
+
+.Time {
+  background-color: #b68f40;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.Time > .vertical-title {
+  color: black;
+  background-color: #b6cca1;
+}
+
+div.time-info {
+  font-size: 64px;
+  width: 248px;
+  height: 148px;
+
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+div.vertical-title {
+  padding: 8px 8px 8px 8px;
+  font-size: 24px;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  height: 148px;
+}
+
 button.randomize {
+  font-size: 24px;
   height: 48px;
   width: 200px;
 }
