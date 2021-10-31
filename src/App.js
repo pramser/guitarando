@@ -4,11 +4,16 @@ import Fretboard from "./Fretboard";
 import Time from "./Time";
 import Words from "./Words";
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [chords, setChords] = useState([0]);
+  const [chord, setChord] = useState([0]);
   const [words, setWords] = useState(["random"]);
+  const [time, setTime] = useState(0);
 
   const clickRandomize = () => {
     setIsLoaded(false);
@@ -17,6 +22,8 @@ function App() {
       .then((fetchedWords) => {
         setWords(fetchedWords);
       });
+    setTime(getRandomInt(3));
+    setIsLoaded(true);
   };
 
   return (
@@ -31,7 +38,7 @@ function App() {
             <Words words={words} />
           </div>
           <div>
-            <Time />
+            <Time time={time} />
           </div>
         </div>
         <div style={{ textAlign: "center" }}>
