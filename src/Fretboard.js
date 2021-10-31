@@ -5,11 +5,25 @@ const NUM_OF_STRINGS = 6;
 const TUNING_KEY = "E";
 
 function getStringByIndex(index) {
-  const TUNING = TUNINGS.find(t => t.key === TUNING_KEY)
-  return TUNING.notes[index]
+  const TUNING = TUNINGS.find((t) => t.key === TUNING_KEY);
+  return TUNING.notes[index];
 }
 
-function Fretboard() {
+function resolveFret(chord, string, fret) {
+  if(fret === 0) {
+    return getStringByIndex(string)
+  }
+
+  if(chord[string] === fret) {
+    return "⬤"
+  }
+
+  return <hr />;
+}
+
+function Fretboard(props) {
+  const CHORD = props.chord;
+
   return (
     <div>
       Fretboard
@@ -22,7 +36,9 @@ function Fretboard() {
         {Array.from(Array(NUM_OF_STRINGS)).map((y, string) => (
           <tr>
             {Array.from(Array(NUM_OF_FRETS + 1)).map((z, fret) => (
-              <td>{fret !== 0 ? <hr /> : getStringByIndex(string)}</td>
+              <td>
+                {resolveFret(CHORD, string, fret)}
+              </td>
             ))}
           </tr>
         ))}

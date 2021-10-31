@@ -22,6 +22,7 @@ function App() {
       .then((fetchedWords) => {
         setWords(fetchedWords);
       });
+    setChord([0, 3, 3, 2, 1, 0]);
     setTime(getRandomInt(3));
     setIsLoaded(true);
   };
@@ -31,7 +32,7 @@ function App() {
       <header className="App-header">Guitarando</header>
       <body>
         <div>
-          <Fretboard />
+          <Fretboard chord={chord} />
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <div>
