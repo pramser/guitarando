@@ -53,7 +53,7 @@ table td {
 
 div.chord-info {
   font-size: 64px;
-  width: 248px;
+  width: 200px;
   height: 148px;
 
   display: flex;
@@ -78,7 +78,7 @@ div.word-info {
   padding-left: 16px;
   padding-top: 8px;
   font-size: 32px;
-  width: 248px;
+  width: 200px;
   height: 148px;
 }
 
@@ -96,7 +96,7 @@ div.word-info {
 
 div.time-info {
   font-size: 64px;
-  width: 248px;
+  width: 200px;
   height: 148px;
 
   display: flex;
